@@ -13,3 +13,5 @@ lightslategray
 lightslategrey
 lightsteelblue
 lightyellow
+
+cat colors_extended.tsv | grep -E "^light" | cut -f 1
