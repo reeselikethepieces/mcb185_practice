@@ -26,7 +26,7 @@ print(is_validprob(0.35875))
 print(is_validprob(0))
 print(is_validprob(-.245))
 
-# write a fxn that returns mw of DNA letter; return 'None' if not a nt
+# write a fxn that returns mw of DNA letter; return None if not a nt
 
 def mw_dna(nt):
 	if nt == 'A': return 313.2
@@ -39,7 +39,7 @@ print(mw_dna('C'))
 print(mw_dna('c'))
 print(mw_dna('Z'))
 
-# write a fxn that returns complement of DNA letter; return 'None' if not DNA
+# write a fxn that returns complement of DNA letter; return None if not DNA
 
 def dna_comp(nt):
 	if nt == 'A': return 'T'

@@ -25,7 +25,7 @@ a = 3
 b = 4
 c = math.sqrt(a**2 + b**2)
 print(c)
-print(type(a), type(b), type(c), sep=', ', end='!\n') # cursor not on prev line
+print(type(a), type(b), type(c), sep=', ', end='!\n')
 
 # functions
 
