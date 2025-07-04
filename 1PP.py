@@ -101,7 +101,7 @@ def shentropy(A, C, G, T):
 	if pg > 0: eg = -pg * math.log2(pg)
 	else:      eg = 0
 	if pt > 0: et = -pt * math.log2(pt)
-	else:      et = 0.0
+	else:      et = 0
 	
 	return ea + ec + eg + et
 	
