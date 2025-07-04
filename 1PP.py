@@ -4,8 +4,8 @@
 # write a fxn that det if a number is an int
 
 def is_integer(n):
-	if n % 2 == 0: return 'is an integer'
-	else:          return 'is not an integer'
+	if n % 2 == 0: return True
+	else:          return False
 
 print(is_integer(1))
 print(is_integer(12))
