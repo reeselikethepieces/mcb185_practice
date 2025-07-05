@@ -68,3 +68,30 @@ for i in range(len(basket)):
 for i in range(7):
 	if i % 2 ==0: print(i, 'is even')
 	else:         print(i, 'is odd')
+
+# random numbers
+import random
+
+for i in range(5):
+	print(random.random())
+	
+for i in range(3):
+	print(random.randint(1, 6))
+
+# seeds allow you to reuse the same random numbers
+	# useful for debugging
+	# all random numbers have a starting "seed" number
+random.seed(1)
+print(random.random())
+print(random.random())
+random.seed(2)
+print(random.random())
+print(random.random())
+random.seed(1)              # repeats the random numbers from the above seed(1)
+print(random.random())
+print(random.random())
+
+# compound assignment
+	# instead of writing x = x + 1 --> x += 1
+	# s/s with -= and *= 
+	# others exist but for now, just the above
