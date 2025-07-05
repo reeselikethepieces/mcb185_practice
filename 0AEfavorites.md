@@ -3,8 +3,10 @@
 ## songs ##
 At first, I struggled with picking three songs/decade.
 
-Then I got to the 90s...
+Then I got to the 90s...and then I realized some favs were from the 80s?
+It became what felt impossible to pick *just* three.
 
+Note: Songs are in no particular order (for meow)
 Nonetheless, this is a non-exhausted list and will probs be edited later on.
 1. 60s
     - Time of the Season
@@ -75,7 +77,7 @@ Nonetheless, this is a non-exhausted list and will probs be edited later on.
         - The Gorillaz
     - Horseshoes and Handgrenades
         - Green Day
-    - Take This to Your Grave/Where Is Your Boy
+    - Grand Theft Autumn/Where Is Your Boy
         - Fall Out Boy
     - Get Busy Living Or Get Busy Dying(Do Your Part To Save The Scene...)  
         - Fall Out Boy
@@ -105,10 +107,10 @@ Nonetheless, this is a non-exhausted list and will probs be edited later on.
         - Feist
     - Put Your Records On
         - Corinne Bailey Rae
-    - Maria Maria
-        - Santana ft. The Product G&B
     - Where Is the Love?
         - The Black Eyed Peas
+    - Maria Maria
+        - Santana ft. The Product G&B
 6. 10s
     - Walk
         - Foo Fighters
@@ -183,4 +185,5 @@ Nonetheless, this is a non-exhausted list and will probs be edited later on.
 2. Morgan
 3. Devin
 4. Lily
-5. Lorf
+5. Rab
+6. Lorf
