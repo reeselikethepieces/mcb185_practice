@@ -34,6 +34,10 @@ Nonetheless, this is a non-exhausted list and will probs be edited later on.
     - Running Up That Hill (A Deal With God)
         - Kate Bush
 4. 90s
+    - The Impression That I Get
+        - Mighty Mighty Bosstones
+    - Bellbottoms
+        - The Jon Spencer Blues Explosion
     - Amber
         - 311
     - Peaches
@@ -48,6 +52,8 @@ Nonetheless, this is a non-exhausted list and will probs be edited later on.
         - Nirvana
     - What's up?
         - 4 Non Blondes
+    - Stellar
+        - Incubus
     - Father of Mine
         - Everclear
     - The Distance
@@ -62,6 +68,8 @@ Nonetheless, this is a non-exhausted list and will probs be edited later on.
         - Foo Fighters
     - Scar Tissue
         - Red Hot Chilli Peppers
+    - Gone Away
+        - The Offspring
     - Walkin' On The Sun
         - Smash Mouth
 5. 2000s
@@ -89,12 +97,16 @@ Nonetheless, this is a non-exhausted list and will probs be edited later on.
         - The Strokes
     - A-Punk
         - Vampire Weekend
+    - Sweet Disposition
+        - The Temper Trap
     - Moth's Wings
         - Passion Pit
     - Lisztomania 
         - Phoenix
     - Float On
         - Modest Mouse
+    - Somewhere Only We Know
+        - Keene
     - Hysteria
         - Muse
     - Knights of Cydonia
