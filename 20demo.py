@@ -74,9 +74,11 @@ import random
 
 for i in range(5):
 	print(random.random())
+# IMPORTANT: .random will only provide values between 0 and 1
 	
 for i in range(3):
 	print(random.randint(1, 6))
+# IMPORTANT: .randint will provide only integers, not floats
 
 # seeds allow you to reuse the same random numbers
 	# useful for debugging
