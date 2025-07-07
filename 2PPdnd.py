@@ -43,41 +43,31 @@ for di in range(amt):
 '''
 # random.seed(1)
 
-
-#3D6
-limit = 4
+# 3D6
+trial = 100000
 total = 0
-for j in range(limit):
-#	print(j)
-	amt = 3
-	roll = 0
-	for di in range(amt):
-		di = random.randint(1,6)
-		print('ind di is', di)
-		roll += di
-#		print(di, roll)
-	print('    roll for 3D6', roll)
-	
-	total += roll
-print('        the average roll is', total/limit)
+for j in range(trial):
+	ndice = 3
+	stat = 0
+	for i in range(ndice):
+		di = random.randint(1, 6)
+		stat += di
+	total += stat
+print(total/trial)
 
 
 # 3D6r1
-limit = 4 
+trial = 100000
 total = 0
-for j in range(limit):
-	amt = 3
-	roll = 0
-	for i in range(amt):
+for j in range(trial):
+	ndice = 3
+	stat = 0
+	for i in range(ndice):
 		di = random.randint(1, 6)
-#		if di == 1: di = random.randint(1, 6)       see explanation below
-		while di == 1: di = random.randint(1, 6)
-		
-		print('ind di is', di)
-		roll += di
-	print('    roll for 3D6', roll)
-	total += roll
-print('        the average roll is', total/limit)
+		if di == 1: di = random.randint(1, 6)
+		stat += di
+	total += stat
+print(total/trial)
 
 # the commented out conditional only works the for the first time, if a re-roll also
 # is a '1', it will stay; thus, to alleviate this, need 'while' loop
@@ -88,19 +78,17 @@ def my_max(a, b):
 	if a > b: return a
 	else:     return b
 
-limit = 4 
+trial = 100000
 total = 0
-for j in range(limit):
-	amt = 3
-	roll = 0
-	for i in range(amt):
+for j in range(trial):
+	ndice = 3
+	stat = 0
+	for i in range(ndice):
 		di1 = random.randint(1, 6)
 		di2 = random.randint(1, 6)
-		print(di1, di2)
-		roll += my_max(di1, di2)
-	print('    ', roll)
-	total += roll
-print(total/limit)
+		stat += my_max(di1, di2)
+	total += stat
+print(total/trial)
 
 
 # 4D6d1: roll 4 six-sided dice, dropping the lowest die roll
@@ -110,22 +98,14 @@ def min_four(a, b, c, d):
 	elif c < d:       return c
 	else:             return d
 
-limit = 4 
+trial = 100000
 total = 0
-for j in range(limit):
-	amt = 3
-	roll = 0
-	throw_away = 0
-	keep = 0
-	for i in range(amt):
-		di1 = random.randint(1, 6)
-		di2 = random.randint(1, 6)
-		di3 = random.randint(1, 6)
-		di4 = random.randint(1, 6)
-#		print(di1, di2, di3, di4)
-		throw_away += min_four(di1, di2, di3, di4)
-		roll += di1 + di2 + di3 + di4
-		keep = roll - throw_away
-#	print('    ', keep)
-	total += keep
-print(total/limit)
+for i in range(trial):
+	di1 = random.randint(1, 6)
+	di2 = random.randint(1, 6)
+	di3 = random.randint(1, 6)
+	di4 = random.randint(1, 6)
+	stat = di1 + di2 + di3 + di4 - min_four(di1, di2, di3, di4)
+	total += stat
+
+print(total/trial)
