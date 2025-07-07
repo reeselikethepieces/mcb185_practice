@@ -82,7 +82,48 @@ print('        the average roll is', total/limit)
 # the commented out conditional only works the for the first time, if a re-roll also
 # is a '1', it will stay; thus, to alleviate this, need 'while' loop
 
-
-# taking break- will continue later
 # 3D6x2: roll pairs of six-sided 3 times, taking max each time
+def my_max(a, b):
+	if a > b: return a
+	else:     return b
+
+limit = 4 
+total = 0
+for j in range(limit):
+	amt = 3
+	roll = 0
+	for i in range(amt):
+		di1 = random.randint(1, 6)
+		di2 = random.randint(1, 6)
+		print(di1, di2)
+		roll += my_max(di1, di2)
+	print('    ', roll)
+	total += roll
+print(total/limit)
+
 # 4D6d1: roll 4 six-sided dice, dropping the lowest die roll
+def min_four(a, b, c, d):
+	if a < b < c < d: return a
+	elif b < c < d:   return b
+	elif c < d:       return c
+	else:             return d
+
+limit = 4 
+total = 0
+for j in range(limit):
+	amt = 3
+	roll = 0
+	throw_away = 0
+	keep = 0
+	for i in range(amt):
+		di1 = random.randint(1, 6)
+		di2 = random.randint(1, 6)
+		di3 = random.randint(1, 6)
+		di4 = random.randint(1, 6)
+#		print(di1, di2, di3, di4)
+		throw_away += min_four(di1, di2, di3, di4)
+		roll += di1 + di2 + di3 + di4
+		keep = roll - throw_away
+#	print('    ', keep)
+	total += keep
+print(total/limit)
