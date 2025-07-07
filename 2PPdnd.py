@@ -68,7 +68,7 @@ total = 0
 for j in range(limit):
 	amt = 3
 	roll = 0
-	for di in range(amt):
+	for i in range(amt):
 		di = random.randint(1, 6)
 #		if di == 1: di = random.randint(1, 6)       see explanation below
 		while di == 1: di = random.randint(1, 6)
