@@ -20,7 +20,7 @@ for i in range(trials):
 	while True:
 		roll = random.randint(1, 20)
 		
-		if   roll == 20: 
+		if  roll == 20: 
 			revi += 1 
 			break
 		
