@@ -50,10 +50,10 @@ for i in range(trials):
 		elif roll < 10:  fail += 1
 		else:            succ += 1
 		
-		if   fail >= 3:  
+		if  fail >= 3:  
 			dies += 1 
 			break
-		if   succ == 3:  
+		if  succ == 3:  
 			stab += 1
 			break
 	
