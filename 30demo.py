@@ -16,9 +16,9 @@ print(s3)
 	# \' tells python the single quote is not a delimiter
 	# \n tells python newline character
 	# \t tells python horizontal tab
+	
 space =  '\nmake some room\n'
 print(space)
-
 
 s1 = "5'"
 s2 = '-' * 6
@@ -137,8 +137,10 @@ for i in range(0, len(dna), 3):
 
 # tuples
 	# are container that holds multiple values
+	
 tax = ('Homo', 'sapiens', 9606)  # construct tuple
 print(tax)                       # note the () in the output
+
 # tuples are immutable (!= contents via indices)
 # next two lines return errors
 '''
@@ -151,24 +153,24 @@ print(tax[::-1])
 
 
 # enumerate() and zip()
-	# stepping through containers, often useful to have both indices and values
+# stepping through containers, often useful to have both indices and values
 nts = 'ACGT'
 for i in range(len(nts)):
 	print(i, nts[i])
-	# alternatively: enumerate() 
+# alternatively: enumerate() 
 for i, nt in enumerate(nts):
 	print(i, nt)
 	
-	# stepping through containers in parallel
+# stepping through containers in parallel
 nts = 'ACGT'
 names = ('adenine', 'cytosine', 'guanine', 'thymine')
 for i in range(len(names)):
 	print(nts[i], names[i])
-	# zip()
+# zip()
 for nt, name in zip(nts, names):
 	print(nt, name)
 	
-	# enumerate the zip
+# enumerate the zip
 for i, (nt, name) in enumerate(zip(nts, names)):
 	print(i, nt, name)
 
@@ -180,50 +182,62 @@ nts = ['A', 'T', 'C']
 print(nts)
 nts[2] = 'G'
 print(nts)
+
 # mk elements
 nts.append('C')
 print(nts)
+
 # rm elements
 last = nts.pop()
 print(last)
+
 # sorted with `list.sort()` --> only works w/ mix of ints and floats, but not mix with str
 nts.sort()
 print(nts)
 nts.sort(reverse=True)
 print(nts)
+
 # if a new variable is added to an existing list, OG list is 1 name, other name is 2 name
 nucleotides = nts
 nucleotides.append('C')
 nucleotides.sort()
 print(nts, nucleotides)    # (same, same)
+
 # make a copy
 	# `list.copy()` = "shallow" copy = xdim []s + complex data strc not fully copied
 
 # list()
 	# empty creates empty lists
+	
 items = list()
 print(items)
 items.append('eggs')
 print(items)
-	# as a fxn, coerces other 'iterables' into lists
+
+# as a fxn, coerces other 'iterables' into lists
 # i.e. conver string into list of letters
+
 alph = 'ABCDEFGHIJKLMPQRSVW'
 print(alph)
 aas = list(alph)
 print(aas)
+
 # alternatively, create empty list by assigning a variable to []
 stuff = []
 stuff.append(3)
 print(stuff)
 
 # split() and join()
+
 # splits into lists of strings
 text = 'good day                  to you'
 words = text.split()                         # useful for segmenting words, delimiter=' '
 print(words)
+
 # TSV CSV data, split on \t or comma
 line = '1.41,2.72,3.14'
 print(line.split(','))
+
 # list --> string via delimiter-joining
 s = '-'.join(aas)
 print(s)
@@ -232,14 +246,18 @@ print(s)
 
 
 # searching for items in containers: `in`, `find()`, `index()`
+
 # `in` reads well with conditional statements
 if 'A' in alph: print('yay')
 if 'a' in alph: print('no')
+
 # `index()` method, if !find, print fxn throws error
 print('index G?', alph.index('G'))
 #print('index Z?', alph.index('Z'))
+
 # `find()` method, if !find, print fxn returns '-1' ~~~> oNlY StRiNgS
 print('index G?', alph.find('G'))
 print('index Z?', alph.find('Z'))
+
 # for tuples and lists, if you're not sure !find or not, use `in`
 	# i.e.	if thing in list: idx = list.index(thing)
