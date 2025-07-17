@@ -6,9 +6,9 @@ listA = ['apples', 'spinach', 'chicken', 'Lucerne cottage cheese', 'lemons']
 listB = ['ASDLFKHSDGLSGH']
 
 # reese OG
-def minval(lisst):
-	lisst.sort()
-	return lisst[0]
+def minval(x):
+	x.sort()
+	return x[0]
 	 
 print(minval(listA))
 
@@ -73,5 +73,5 @@ def dkl(P, Q):
 		d += p * math.log2(p/q)
 	return d
 p1 = [0.4, 0.3, 0.2, 0.1]
-p2 = (0.1, 0.3, 0.4, 0.2)     # allowed bc lists and tuples can be zipped in || 
+p2 = (0.1, 0.3, 0.4, 0.2)     # allowed bc lists and tuples can be zipped in parallel
 print(dkl(p1, p2))
