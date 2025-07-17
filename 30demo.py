@@ -261,3 +261,35 @@ print('index Z?', alph.find('Z'))
 
 # for tuples and lists, if you're not sure !find or not, use `in`
 	# i.e.	if thing in list: idx = list.index(thing)
+
+
+# command line data
+# sys.argv = a variable
+	# is a complete list of words on the command line
+	# argv =  argument vector 
+	# sys.argv[0] is the program 
+	# sys.argv[1] is the first argument (if there is one)
+
+import sys
+print(sys.argv) # printing this will return ['30demo.py']
+
+# run again with additional command line arguments
+	# returns ['30demo.py', '3.14', '2.71']
+		# the square brackets because `sys.argv` is a list
+		# pi and e (numeric values) have quotes bc they are strings
+
+# coverting types 
+	# data read from command line and files (next unit) are in the form of strings
+	# convert text representation of numbers to ints and floats b4 doing math
+	# do this with `int()` and `float()` functions
+
+i = int('42')
+x = float('0.61803')
+print(i * x)
+
+# converting something that doesn't look like a number into a number
+# x = float('hello')  -->  ValueError: could not conver string into float: "hello"
+
+# several ways to interact with error conditions in python
+# this course does not go over `assert` `try` `except` or `raise`
+# if you run into an error message and want to provide a custom message, use sys.exit()
