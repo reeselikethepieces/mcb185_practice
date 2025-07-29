@@ -6,61 +6,56 @@
 # write a prog that reports descriptive stats for the numbers on the command line
 # descriptive stats = [num of values, min and max values, mean and sd, mediam]
 
-import sys
-
 # is this hardcoding?
 # numsum = len(sys.argv[1:])
+import sys
 
 vals = []
 for arg in sys.argv[1:]:
 	f = float(arg)
 	vals.append(f)
 
-# initiation variables
 # n of values
-numsum = 0
-# mini, maxi
+num_vals = len(vals)
+
+
+# mini, max, and mean
 mini = vals[0]
 maxi = vals[0]
-# mean
-total = 0
-avg = 1
-# sd
-s = 0
-sd = 1
-# median
-medi = 1
+total_vals = 0
 
 for x in vals:
-	# n of values
-	numsum = len(vals)
-	
 	# mini, maxi
 	if x < mini: mini = x
 	if x > maxi: maxi = x
-	
-	# mean
-	total += x
-	avg = total / numsum
-	
-	# s in sd calculation
-	s += (x - avg)**2
-	s.diffs.append(s)
-	# sum of s 
-	stotal = 0
-	for s in s.diffs:
-		stotal += vals
-	# final calc of sd 
-	sd = (s / (numsum -1)**0.5
-	
-	# pickup here
-	# median
-	vals.sort()
-	if _ % 2 == 0: medi = vals[int((numsum//2) + (numsum/2 +1))/2]
-	else:          medi = vals[numsum//2]
-	
-	
+	# mean part 1
+	total_vals += x
+# mean part 2
+avg = total_vals / num_vals
+
+
+# sd part 1
+s_diff = []
+for x in vals:
+	# squared differences
+	s = (x - avg)**2
+	s_diff.append(s)
+# sd part 2		
+total_s = 0
+for s in s_diff:
+	total_s += s
+# sd part 3
+sd = (total_s / (num_vals-1))**0.5
 	
 
+# median
+
 print(sys.argv)
-print(f'n: {numsum}, min: {mini}, max: {maxi}, mean: {avg:.3f}, sd: {sd:.3f}')
+print(f'n: {num_vals}, min: {mini}, max: {maxi}, mean: {avg:.3f}, sd: {sd:.3f}')
+
+
+'''
+in CL: 1 1 4 3 2
+terminal should return: ['32stats.py', '1', '1', '4', '3' '2']
+                        n: 5, min: 1.0, max 4.0, mean: 2.200, sd: 1.304
+'''
