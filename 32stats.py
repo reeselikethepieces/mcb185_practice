@@ -35,27 +35,23 @@ avg = total_vals / num_vals
 
 
 # sd part 1
-s_diff = []
+s = 0
 for x in vals:
-	# squared differences
-	s = (x - avg)**2
-	s_diff.append(s)
-# sd part 2		
-total_s = 0
-for s in s_diff:
-	total_s += s
+	s += (x - avg)**2
 # sd part 3
-sd = (total_s / (num_vals-1))**0.5
+sd = (s / (num_vals-1))**0.5
 	
 
 # median
-
+'''for x in vals:
+	if len(vals) == even
+'''
 print(sys.argv)
 print(f'n: {num_vals}, min: {mini}, max: {maxi}, mean: {avg:.3f}, sd: {sd:.3f}')
 
 
 '''
 in CL: 1 1 4 3 2
-terminal should return: ['32stats.py', '1', '1', '4', '3' '2']
+terminal should return: ['32stats.py', '1', '1', '4', '3', '2']
                         n: 5, min: 1.0, max 4.0, mean: 2.200, sd: 1.304
 '''
