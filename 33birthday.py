@@ -21,8 +21,8 @@ for _ in range(trials):
 		if bday in bdays:
 			shared += 1
 			break
-		bdays.append(bday)ß		
-
+		bdays.append(bday)
+		
 print(f'{shared/trials}')
 
 '''
