@@ -43,15 +43,22 @@ sd = (s / (num_vals-1))**0.5
 	
 
 # median
-'''for x in vals:
-	if len(vals) == even
-'''
+vals.sort()
+medi = None
+if num_vals % 2 != 0: medi = vals[num_vals // 2]
+else:                 medi = (vals[num_vals // 2] + vals[(num_vals // 2) - 1])/2
+
 print(sys.argv)
-print(f'n: {num_vals}, min: {mini}, max: {maxi}, mean: {avg:.3f}, sd: {sd:.3f}')
+print(f'n: {num_vals}, min: {mini}, max: {maxi}, mean: {avg:.3f}, sd: {sd:.3f}, medi: {medi}')
 
 
 '''
+if line 48 == True: 
 in CL: 1 1 4 3 2
 terminal should return: ['32stats.py', '1', '1', '4', '3', '2']
-                        n: 5, min: 1.0, max 4.0, mean: 2.200, sd: 1.304
+                        n: 5, min: 1.0, max 4.0, mean: 2.200, sd: 1.304, medi: 2
+else:
+in CL: 1 1 4 3 2 5
+terminal should return: ['32stats.py', '1', '1', '4', '3', '2', '5']
+                        n: 6, min: 1.0, max: 5.0, mean: 2.667, sd: 1.633, medi: 2.5
 '''
