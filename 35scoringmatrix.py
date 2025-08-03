@@ -1,8 +1,8 @@
 import sys
 
 alpha = str(sys.argv[1])
-mat = int(sys.argv[2])
-mis = int(sys.argv[3])
+mat = str(sys.argv[2])
+mis = str(sys.argv[3])
 
 for i in range(5):
 	row = []
@@ -22,7 +22,7 @@ for i in range(5):
 		row.append(pairwise)
 		
 		for letter in alpha:
-			if letter == pairwise: row.append(f'+{mat}')
+			if letter == pairwise: row.append(str(mat))
 			else:                  row.append(str(mis))
 			
 		print('  '.join(row))
