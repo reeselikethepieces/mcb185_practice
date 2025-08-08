@@ -23,10 +23,24 @@ for i in range(len(seq) - 2):
 	frame = i % 3 + 1
 	
 	codon = seq[i:i+3]
-	print(f'{position}\t{frame}\t{codon}')
+#	print(f'{position}\t{frame}\t{codon}')
 	
 	position += 1
+
+
+# again but with frame as a nested loop
+
+seq = str(sys.argv[1])
+position = 1
+
+for nt in range(len(seq) - 2):
+	codon = seq[nt:nt+3]
 	
+	for frame in range(1, 4):
+		if frame == nt % 3 + 1: 
+			print(f'{position}\t{frame}\t{codon}')
+			position += 1
+			break
 	
 	
 
