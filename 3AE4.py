@@ -5,6 +5,8 @@
 import random
 import sys
 
+random.seed(5)
+
 genome_size = int(float(sys.argv[1]))
 depth = int(sys.argv[2])
 read_size = int(sys.argv[3])
@@ -18,9 +20,8 @@ for _ in range(genome_size):
 
 # reads 
 for _ in range(reads_total):
-	starting_position = random.randint(0, genome_size - 1)
+	starting_position = random.randint(0, genome_size - read_size)
 	
-	for genome_position in range(starting_position, read_size - 1):
+	for genome_position in range(starting_position, starting_position + read_size):
 		genome[genome_position] += 1
-
 
