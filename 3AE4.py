@@ -5,15 +5,22 @@
 import random
 import sys
 
-genome_size = int(sys.argv[1])
+genome_size = int(float(sys.argv[1]))
 depth = int(sys.argv[2])
 read_size = int(sys.argv[3])
 
-# initializing
-hit = []
-for base in range(genome_size):
-	score.append(0)
+reads_total = genome_size * depth // read_size
+
+# initializing genome
+genome = []
+for _ in range(genome_size):
+	genome.append(0)
+
+# reads 
+for _ in range(reads_total):
+	starting_position = random.randint(0, genome_size - 1)
 	
-	
+	for genome_position in range(starting_position, read_size - 1):
+		genome[genome_position] += 1
 
 
