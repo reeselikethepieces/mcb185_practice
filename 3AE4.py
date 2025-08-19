@@ -7,45 +7,33 @@
 import random
 import sys
 
-random.seed(5)
+#random.seed(5)
 
 genome_size = int(float(sys.argv[1]))
 depth = int(sys.argv[2])
 read_size = int(sys.argv[3])
+max_depth = int(sys.argv[4])
 
 reads_total = genome_size * depth // read_size
 
 # initializing genome
-genome = []
-for _ in range(genome_size):
-	genome.append(0)
+genome = [0] * genome_size
 
 # reads
 for _ in range(reads_total):
 	starting_position = random.randint(0, genome_size - read_size)
-	
+
 	for genome_position in range(starting_position, starting_position + read_size):
 		genome[genome_position] += 1
 
-# take3
-no_covrg_counts = []
-coverage_counts = []
+hits = [0] * max_depth
+for cov in (genome[read_size: -read_size]):
+	if cov >= max_depth: continue
+	hits[cov] += 1
 
-for position, coverage in enumerate(genome):
-	if coverage != 0:
-		coverage_counts.append(coverage)
-	else:
-		no_covrg_counts.append(position)
-
-
-# https://www.youtube.com/watch?v=0zrygaLGxuM
-
-textfile = open('/Users/pieces/Code/coverage_counts.txt', 'w')
-
-content = ''.join(str(coverage_counts))
-
-textfile.writelines(content)
-textfile.close()
+for c, d in enumerate(hits):
+	print(d/(genome_size*depth))
+	
 
 
 '''
@@ -62,20 +50,13 @@ for position, coverage in enumerate(genome):
 		no_covrg_counts.append(position)
 
 
-# https://www.youtube.com/watch?v=0zrygaLGxuM
-
-textfile = open('/Users/pieces/Code/coverage_counts.txt', 'w')
-
-# copilot help
 content = '\n'.join(str(x) for x in coverage_counts)
 
-textfile.writelines(content)
-textfile.close()
-'''
 
 
 
-'''
+
+
 # for all:
 
 no_covrg_counts = []
