@@ -31,3 +31,13 @@ with gzip.open(path, 'rt') as fp:
 	for line in fp:
 		print(line, end='')
 '''
+
+# FASTA files --> seq often stored in these file formats
+# a single seq record has the following format:
+	# defline (definition line) is the first line beginning with '>'
+	# after '>' is a unique identifier, and the rest of the line is descriptive info.
+	# then begin the sequence lines- commonly 60-80 char in length 
+		# some ppl put all seq on one line
+# multi-FASTA files have more than one seq record
+
+# libraries are collections of reusable fxns 
