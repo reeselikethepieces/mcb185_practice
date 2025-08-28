@@ -32,4 +32,4 @@ for cov in (genome[read_size: -read_size]):
 
 # output
 for c, d in enumerate(hits):
-	print(d/(genome_size*depth))
+	print(d/genome_size)

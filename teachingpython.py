@@ -23,6 +23,10 @@ while False:
 	# for i in range()
 	# for _ in range() --> oNlY when throwing away '_' value 
 	# for thing in container 
+
+# for _ in range()
+	# focusing in on 'range' fxn, although only one argument is needed,
+	# it must be an integer (not a list of integers)
 	
 # side by side 
 limit = 12
