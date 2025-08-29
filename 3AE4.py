@@ -1,5 +1,3 @@
-# INCOMPLETE
-
 # E. coli genome is 4.6Mbp and you decide to do 5x random shotgun seqs with 100bp len read
 # make a table with rows of seq depth (e.g. 5x) and columns of read cov (0, 1, 2..)
 
