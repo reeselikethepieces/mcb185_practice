@@ -59,3 +59,14 @@ def translate(dna):
 	# thus, they can be written in one line (more sophisticated in programming world)
 	# but doesn't necessarily make it more readable 
 # aas.append(aminos[codons.index(codon)])
+
+# gc_comp()
+def gc_comp(seq):
+	return (seq.count('C') + seq.count('G')) / len(seq)
+
+# gc_skew()
+def gc_skew(seq):
+	c = seq.count('C')
+	g = seq.count('G')
+	if c + g == 0: return 0
+	return (g - c) / (g + c)
