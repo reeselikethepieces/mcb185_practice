@@ -37,6 +37,14 @@ Size 	Slow 	Fast
 4000 	7.28
 5000	7.38 	
 '''
+'''
+7.33
+7.24
+7.39
+7.44
+7.29
+7.31
+'''
 
 '''
 IK numbers:
@@ -48,4 +56,20 @@ Size 	Slow 	Fast
 3000 	36.1 	3.79
 4000 	47.7 	3.71
 5000 	59.0 	3.73
+'''
+
+'''
+1. How does the function ‘time’ work?
+	I imagine there is a loop within the fxn for a few reasons.
+	I wonder if the timer begins once 
+	compiles/interprets into machine code and stops once the processor returns a value…. 
+	or if within the loop, there is some time that collects line vy line and then adds up 
+	at the end for a total runtime count
+2. Time function is an _internal-based on convo the other day_ ?
+    Regardless, could one go in and edit that type of library?
+        If yes - maybe change or add ‘total’ time where total = user + system
+3. When I ran my programs at various window lengths, it appeared the change in system 
+	time was negligible as it barely changed —> but could this be due to something in my 
+	computer/RAM…
+    	What do terms like i5, i7, i9 mean?
 '''
