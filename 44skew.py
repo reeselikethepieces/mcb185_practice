@@ -19,14 +19,35 @@ import sys
 import mcb185
 import sequence
 
+'''
 # slow
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
 	w = 10
 	for i in range(len(seq) -w +1):
 		s = seq[i:i+w]
 		print(i, sequence.gc_comp(s), sequence.gc_skew(s))
+'''
+
+# fast
+# for defline, seq in mcb185.read_fasta(sys.argv[1]):
+# test the theory 
+seq = 'ACGTACGTGGGGGACGTACGTCCCCC'
+seq_list = list(seq)
+first_position = seq_list.pop(0)
+last_possition = seq_list.append('X')
+print(seq_list)
 
 '''
+seq_list = list(seq)
+initial_w = 10
+for i in range(len(seq) - w + 1):
+	if i == 0: 
+		s = seq[i:i+w]
+		initial_seq = list(s)
+	else:
+	
+
+
 RC numbers:
 Size 	Slow 	Fast
  10		7.28
