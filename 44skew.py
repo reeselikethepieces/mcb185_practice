@@ -19,35 +19,38 @@ import sys
 import mcb185
 import sequence
 
-'''
+w = int(sys.argv[2])
+
 # slow
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
-	w = 10
 	for i in range(len(seq) -w +1):
 		s = seq[i:i+w]
 		print(i, sequence.gc_comp(s), sequence.gc_skew(s))
-'''
 
 # fast
-# for defline, seq in mcb185.read_fasta(sys.argv[1]):
+
+# seq =   'ACGTGGGGGGCATATGTACGTCCCCC'
+
 # test the theory 
-seq = 'ACGTACGTGGGGGACGTACGTCCCCC'
-seq_list = list(seq)
-first_position = seq_list.pop(0)
-last_possition = seq_list.append('X')
-print(seq_list)
+# first_position = seq_list.pop(0)
+# last_position = seq_list.append('X')
+# print(sequence.gc_comp(seq_list), sequence.gc_skew(seq_list))
 
+# is this frowned upon? having sys.argv[n] where n > m occur first?
 '''
-seq_list = list(seq)
-initial_w = 10
-for i in range(len(seq) - w + 1):
-	if i == 0: 
-		s = seq[i:i+w]
-		initial_seq = list(s)
-	else:
+
+for defline, seq in mcb185.read_fasta(sys.argv[1]):
 	
+	initial_w = seq[:w]
+	print(sequence.gc_comp(initial_w), sequence.gc_skew(initial_w))
 
-
+	for i in range(1, len(seq) - w + 1):
+		next_nt = seq[i + w - 1]
+		rest_w = initial_w[1:] + next_nt
+		print(i, sequence.gc_comp(rest_w), sequence.gc_skew(rest_w))
+		initial_w = rest_w
+'''
+'''
 RC numbers:
 Size 	Slow 	Fast
  10		7.28
