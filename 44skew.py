@@ -19,14 +19,30 @@ import sys
 import mcb185
 import sequence
 
-w = int(sys.argv[2])
+# w = int(sys.argv[2])
+w = 4000
 
 # slow
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
 	for i in range(len(seq) -w +1):
 		s = seq[i:i+w]
-		print(i, sequence.gc_comp(s), sequence.gc_skew(s))
-
+		print(sequence.gc_comp(s), sequence.gc_skew(s))
+'''
+10:    6.9
+100:   8.4
+1000: 23.18
+2000: 41.54
+3000: 65.36
+4000:
+5000:
+'''
+# START HERE WITH QUESTIONS
+# very confused why these numbers are so much bigger than the numbers reported/seen below
+	# everything is closed on my computer, no updates, etc. 
+	# what is the 'standard' or 'good practice' for a computer when benchmarking
+	# or timing algorithms? if there's this much inconsistency, how can one decide if
+		# algorithm A is faster or slower than algorithm B
+		
 # fast
 
 # seq =   'ACGTGGGGGGCATATGTACGTCCCCC'
