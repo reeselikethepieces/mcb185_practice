@@ -1,4 +1,5 @@
-# Incomplete
+# see `44skew_redo`
+# this file contains questions and other mini experiments 
 
 # there is computational inefficiency in `43skew.py`
 	# each window is counted and then forgotten
