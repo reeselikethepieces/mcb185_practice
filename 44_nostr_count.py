@@ -18,7 +18,7 @@ import sys
 import mcb185
 
 w = int(sys.argv[2])
-
+'''
 # slow `43skew.py`	
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
 	for i in range(len(seq) -w +1): 
@@ -36,6 +36,7 @@ for defline, seq in mcb185.read_fasta(sys.argv[1]):
 		print(i, gc, skew)
 		
 '''
+'''
 windo_size 	 slow    fast
     10	 	 8.25	
    100 	 	35.32	
@@ -46,7 +47,36 @@ windo_size 	 slow    fast
   5000 	   	
 '''
 
-# fast
+#PICK UP HERE
+# fast 
+c = 0
+g = 0
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
-	initial_w = seq[:w]
+	# initial seq
+	initial_w = list(seq[:w])
+	for nt in initial_w:
+		if   nt == 'C': c += 1
+		elif nt == 'G': g += 1
+	if c+g == 0:
+		gc = 0
+		skew = 0
+	else:
+		gc = (c+g)/w
+		skew = (g-c)/(g+c)
+	print(0, gc, skew)
+	# thereafter
+	for i in range(len(initial_w), len(seq) -w + 1):
+		first_position = initial_w.pop(0)
+		if   first_position == 'C': c -= 1
+		elif first_position == 'G': g -= 1
+		
+		last_position  = initial_w.append
+		if   last_position == 'C': c += 1
+		elif last_position == 'G': g += 1
+		
+		print(i, gc, skew)	
+		
+	
+	
+	
 	
