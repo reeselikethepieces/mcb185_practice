@@ -18,7 +18,7 @@ import sys
 import mcb185
 
 w = int(sys.argv[2])
-'''
+
 # slow `43skew.py`	
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
 	for i in range(len(seq) -w +1): 
@@ -34,26 +34,26 @@ for defline, seq in mcb185.read_fasta(sys.argv[1]):
 			gc = (c+g)/w
 			skew = (g-c)/(g+c)
 		print(i, gc, skew)
-		
-'''
+
 '''
 windo_size 	 slow    fast
-    10	 	 8.25	
-   100 	 	35.32	
-  1000	   246.77	
-  2000	   515.47	
-  3000			
-  4000			
-  5000 	   	
+    10	 	12.25	 9.34
+   100 	 	43.10	10.16
+  1000	   340.28	10.34
+  2000	   649.08	10.37	
+  3000	   960.49	11.11	
+  4000	  1292.22	10.37
+  5000 	  1553.33 	10.46
 '''
 
 #PICK UP HERE
 # fast 
-c = 0
-g = 0
+
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
+	c = 0
+	g = 0
 	# initial seq
-	initial_w = list(seq[:w])
+	initial_w = seq[:w]
 	for nt in initial_w:
 		if   nt == 'C': c += 1
 		elif nt == 'G': g += 1
@@ -65,18 +65,20 @@ for defline, seq in mcb185.read_fasta(sys.argv[1]):
 		skew = (g-c)/(g+c)
 	print(0, gc, skew)
 	# thereafter
-	for i in range(len(initial_w), len(seq) -w + 1):
-		first_position = initial_w.pop(0)
-		if   first_position == 'C': c -= 1
-		elif first_position == 'G': g -= 1
+	for i in range(1, len(seq) - w + 1):
+		first_pos = seq[i -1]
+		last_pos  = seq[i + w - 1]
 		
-		last_position  = initial_w.append
-		if   last_position == 'C': c += 1
-		elif last_position == 'G': g += 1
+		if   first_pos == 'C': c -= 1
+		elif first_pos == 'G': g -= 1
 		
-		print(i, gc, skew)	
+		if    last_pos == 'C': c += 1
+		elif  last_pos == 'G': g += 1
 		
-	
-	
-	
-	
+		if c + g == 0:
+			gc = 0
+			skew = 0
+		else:
+			gc = (c+g)/w
+			skew = (g-c)/(g+c)
+		print(i, gc, skew)
