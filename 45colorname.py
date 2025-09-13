@@ -14,17 +14,32 @@ B = int(sys.argv[4])
 R1 = 200
 G1 = 0
 B1 = 50
+R2 = 0
+G2 = 0
+B2 = 0
 input_color = (R1, G1, B1)
+rgb = (R2, G2, B2)
 
-def euclidean(R1, G1, B1, R2, G2, B2):
-	return ((R1 - R2)**2 + (G1 - G2)**2 + (B1 - B2)**2))**0.5
+def euclidean(RGB, rgb):
+	return ((R1 - R2)**2 + (G1 - G2)**2 + (B1 - B2)**2)**0.5
 
 with open(colorfile) as fp:
 	for line in fp:
 		columns = line.split()
-		# PICK UP HERE 
-		print(columns[2]) #string
-		print(columns[2]) #coordinates in containers (lists)
+		split_rgb_vals = columns[2].split(',')
+		
+		#list_rgb_vals = []
+		for rgb in split_rgb_vals:
+			int_rgb_vals = int(rgb)
+		#	list_rgb_vals.append(int_rgb_vals)
+	#	print(list_rgb_vals)
+			euclidean(input_color, int_rgb_vals)
+			print(columns[0])
+		
+		
+			
+		
+			
 			
 
 
