@@ -5,42 +5,40 @@
 import sys
 colorfile = sys.argv[1]
 '''
-R = int(sys.argv[2])
+R int(sys.argv[2])
 G = int(sys.argv[3])
 B = int(sys.argv[4])
 '''
 
-# to test code 
-R1 = 200
-G1 = 0
-B1 = 50
-R2 = 0
-G2 = 0
-B2 = 0
-input_color = (R1, G1, B1)
-rgb = (R2, G2, B2)
+# to test code with RGB = 200, 0 , 50
 
 def euclidean(RGB, rgb):
-	return ((R1 - R2)**2 + (G1 - G2)**2 + (B1 - B2)**2)**0.5
+	R, G, B = RGB
+	r, g, b = rgb
+	return ((R - r)**2 + (G - g)**2 + (B - b)**2)**0.5
+
+RGB = (200, 0, 50) # to test
+color = None
+min_distance = None
 
 with open(colorfile) as fp:
 	for line in fp:
 		columns = line.split()
 		split_rgb_vals = columns[2].split(',')
 		
-		#list_rgb_vals = []
-		for rgb in split_rgb_vals:
-			int_rgb_vals = int(rgb)
-		#	list_rgb_vals.append(int_rgb_vals)
-	#	print(list_rgb_vals)
-			euclidean(input_color, int_rgb_vals)
-			print(columns[0])
+		list_rgb_vals = []
+		for val in split_rgb_vals:
+			int_rgb_vals = int(val)
+			list_rgb_vals.append(int_rgb_vals)
 		
+		rgb = tuple(list_rgb_vals)
+		# next line is needed because floats cannot use comparison operators
+		distance = round(euclidean(RGB, rgb))
 		
-			
-		
-			
-			
+		if distance < min_distance:
+			min_distance = distance
+			print(color = columns[0])
+
 
 
 '''
